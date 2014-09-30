@@ -16,7 +16,7 @@ images:
   source: mattgruter/artifactory:latest
   type: Default
   ports:
-  - host_port: '8091'
-    container_port: '8092'
+  - host_port: '8092'
+    container_port: '8091'
     proto: TCP
-  command: "-p 8092"
+  

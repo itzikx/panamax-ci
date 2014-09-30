@@ -1,0 +1,22 @@
+---
+name: Panamax-ci
+description: ''
+keywords: ''
+type: Tomcat
+documentation: ''
+images:
+- name: jenkins_1
+  source: jenkins:latest
+  type: Default
+  ports:
+  - host_port: '8089'
+    container_port: '8080'
+    proto: TCP
+- name: artifactory
+  source: mattgruter/artifactory:latest
+  type: Default
+  ports:
+  - host_port: '8091'
+    container_port: '8092'
+    proto: TCP
+  command: "-p 8092"

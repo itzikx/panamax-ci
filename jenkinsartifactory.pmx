@@ -1,0 +1,23 @@
+---
+name: JenkinsArtifactory
+description: Jenkins+Artifactory
+keywords: Jenkins, Artifactory, CI
+type: Tomcat
+documentation: |-
+  Jenkins running on 8089
+  Artifactory running on 8099
+images:
+- name: jenkins_1
+  source: jenkins:latest
+  type: Default
+  ports:
+  - host_port: '8089'
+    container_port: '8080'
+    proto: TCP
+- name: artifactory
+  source: mattgruter/artifactory:latest
+  type: Default
+  ports:
+  - host_port: '8099'
+    container_port: '8091'
+    proto: TCP

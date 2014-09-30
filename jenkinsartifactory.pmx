@@ -1,11 +1,13 @@
 ---
 name: JenkinsArtifactory
-description: Jenkins+Artifactory
-keywords: Jenkins, Artifactory, CI
+description: "Jenkins+Artifactory+Nginx\r\n(Nginx is needed for artifactory under
+  docker)"
+keywords: ''
 type: Tomcat
 documentation: |-
   Jenkins running on 8089
   Artifactory running on 8099
+  Nginx - not functional yet
 images:
 - name: jenkins_1
   source: jenkins:latest
@@ -21,3 +23,7 @@ images:
   - host_port: '8099'
     container_port: '8091'
     proto: TCP
+- name: nginx
+  source: nginx:latest
+  category: nginx
+  type: Default

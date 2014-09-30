@@ -1,0 +1,10 @@
+---
+name: ci-jen
+description: ''
+keywords: ''
+type: Tomcat
+documentation: ''
+images:
+- name: jenkins_latest
+  source: jenkins:latest
+  type: Default

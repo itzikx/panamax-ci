@@ -1,6 +1,6 @@
 ---
 name: CI-TEMPLATE
-description: Jenkins+Artifactory+Nginx bundle
+description: "Ubuntu (Jenkins+Artifactory+Nginx)\r\nCentOS - TeamCity\r\n"
 keywords: ''
 type: Tomcat
 documentation: |-
@@ -27,7 +27,7 @@ images:
   source: nginx:latest
   category: nginx
   type: Default
-- name: ariya_centos6-teamcity-server_1
+- name: CentOS6-TeamCity8
   source: ariya/centos6-teamcity-server:latest
   type: Default
   ports:

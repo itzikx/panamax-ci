@@ -1,0 +1,36 @@
+---
+name: CI-TEMPLATE
+description: Jenkins+Artifactory+Nginx bundle
+keywords: ''
+type: Tomcat
+documentation: |-
+  Jenkins running on 8089
+  Artifactory running on 8099
+  Nginx - not functional yet
+  TeamCity - 8110
+images:
+- name: jenkins_1
+  source: jenkins:latest
+  type: Default
+  ports:
+  - host_port: '8089'
+    container_port: '8080'
+    proto: TCP
+- name: artifactory
+  source: mattgruter/artifactory:latest
+  type: Default
+  ports:
+  - host_port: '8099'
+    container_port: '8091'
+    proto: TCP
+- name: nginx
+  source: nginx:latest
+  category: nginx
+  type: Default
+- name: ariya_centos6-teamcity-server_1
+  source: ariya/centos6-teamcity-server:latest
+  type: Default
+  ports:
+  - host_port: '8110'
+    container_port: '8111'
+    proto: TCP

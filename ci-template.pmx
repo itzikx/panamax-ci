@@ -1,13 +1,21 @@
 ---
 name: CI-TEMPLATE
-description: "Ubuntu (Jenkins+Artifactory+Nginx)\r\nCentOS - TeamCity\r\n"
+description: ''
 keywords: ''
-type: Tomcat
+type: Default
 documentation: |-
   Jenkins running on 8089
   Artifactory running on 8099
   Nginx - not functional yet
   TeamCity - 8110
+
+
+  Wetty CLI -
+  The Docker CLI requires access to the docker.sock in the host OS in order to communicate with the Docker daemon. To provide access to the docker.sock you need to mount it into the container using the -v flag:
+
+  docker run -p 3000:3000 \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    centurylink/coreos-cli-wetty
 images:
 - name: jenkins_1
   source: jenkins:latest
@@ -34,3 +42,6 @@ images:
   - host_port: '8110'
     container_port: '8111'
     proto: TCP
+- name: centurylink_coreos-cli-wetty_1
+  source: centurylink/coreos-cli-wetty:latest
+  type: Default
